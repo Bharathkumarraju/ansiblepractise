@@ -1,0 +1,15 @@
+--- #playbook3
+- name: ftp client installed
+  hosts: localhost
+  remote_user: bharath
+  become: True
+  become_method: sudo
+  gather_facts: True
+  connection: ssh
+
+  tasks:
+  - name: install ftp client
+    yum:
+      name: lftp
+      state: latest
+...

@@ -1,0 +1,22 @@
+--- # install ftp server
+- name: ftp server and firewalld
+  hosts: web-server
+  gather_facts: True
+
+  tasks:
+  - block:
+    - name: install sftp
+      yum:
+        name: vsftpd
+        state: latest
+    - name: install firewalld
+      yum:
+        name: firewalld
+        state: latest
+  - block:
+    - name: enable vsftpd
+      service:
+        name: vsftpd
+        enabled: true
+        state: started
+

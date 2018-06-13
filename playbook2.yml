@@ -1,0 +1,16 @@
+--- #playbook2
+- name: Firstplay
+  hosts: bharath.kube.com
+  tasks:
+  - name: install httpd latest
+    yum:
+      name: httpd
+      state: latest
+
+- name: second play
+  hosts: bharath.kube1.com
+  tasks:
+  - name: second play
+    yum:
+      name: mysql
+      state: latest

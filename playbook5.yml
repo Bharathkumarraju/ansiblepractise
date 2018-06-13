@@ -1,0 +1,24 @@
+--- #test sample httpd server
+- name: test http sever
+  hosts: all
+
+  tasks:
+  - block:
+    - name: copy the sampel text
+      copy:
+        content: " Welcome to the hanumans page"
+        dest: /var/www/html/index.html
+  - block:
+    - name: restart httpd
+      service:
+        name: httpd
+        state: restarted
+
+  - block:
+    - name: check the page
+      uri:
+        url: "http://localhost"
+        status_code: 200
+      register: result
+    - name: display registered result
+      debug: var=result
