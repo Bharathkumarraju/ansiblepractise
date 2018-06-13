@@ -1,0 +1,29 @@
+--- #playbook1
+- hosts: "{{ env }}"
+  remote_user: bharath
+  gather_facts: True
+  become: True
+  become_method: sudo
+  connection: ssh
+
+  tasks:
+  - block:
+    - name: first task
+      yum:
+        name: httpd
+        state: latest
+    - name: second task
+      yum:
+        name: openssh-server
+        state: latest
+  - block:
+    - name: First Service task
+      service:
+        name: httpd
+        enabled: true
+        state: started
+    - name: Second service task
+      service:
+        name: sshd
+        enabled: true
+        state: started

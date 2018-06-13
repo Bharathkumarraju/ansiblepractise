@@ -1,0 +1,12 @@
+[web-server]
+172.16.202.128 ansible_connection=local
+[db-server]
+172.16.202.129 ansible_connection=ssh ansible_user=bharath
+[monitor-server]
+172.16.202.130  ansible_connection=paramiko ansible_user=bharath
+[hanumanweb:children]
+web-server
+db-server
+[anjaneyaweb:children]
+monitor-server
+web-server

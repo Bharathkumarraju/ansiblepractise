@@ -1,0 +1,10 @@
+#! /bin/bash
+if [[ $1 != "--list" ]]
+then
+echo "Please pass argument to $0 as --list"
+else
+echo " {
+\"webservers\" : [ \"172.16.202.128\", \"172.16.202.129\" ], 
+\"dbservers\" : [ \"172.16.202.129\", \"172.16.202.130\" ] 
+}"
+fi

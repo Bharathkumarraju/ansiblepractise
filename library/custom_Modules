@@ -1,0 +1,6 @@
+Custom Modules present under the directory defines in the $ANSIBLE_LIBRARY
+
+if the above parameter not set means, this path present under the ansible.cfg configuration file.
+in ansible.cfg  the line is libraby = /usr/share/my_modules/
+
+Most commonly Ansible always look for the modules in the ./library directory  relative to the location of the playbooks being used
