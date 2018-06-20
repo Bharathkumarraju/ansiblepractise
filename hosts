@@ -7,6 +7,12 @@
 [hanumanweb:children]
 web-server
 db-server
+[hanumanweb:vars]
+user=raju
+group=raju1
 [anjaneyaweb:children]
 monitor-server
 web-server
+[anjaneyaweb:vars]
+user=raju123
+group=raju1234

@@ -1,0 +1,27 @@
+--- #variables
+- name: hosts
+  hosts: all
+  become: yes
+  become_method: sudo
+  gather_facts: yes
+  remote_user: bharath
+
+
+  vars:
+    hanuman: anjaneya
+    hanuman_home: /home/ayodhya
+
+  vars_files:
+    - vars/users.yml
+
+  tasks:
+  - name: display varible names
+    debug: 
+       msg: "the varibles are {{item}}" 
+    with_items:
+      - "{{hanuman}}"
+      - "{{hanuman_home}}"
+
+  - name: Display varible names from group vars
+    debug:
+      msg: "the group variables are {{user}}"
