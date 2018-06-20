@@ -24,4 +24,7 @@
 
   - name: Display varible names from group vars
     debug:
-      msg: "the group variables are {{user}}"
+      msg: "the host variables are {{item}} "
+    with_items:
+      - "{{users['hanuman2']['first_name']}}"
+      - "{{users.hanuman2.last_name}}"

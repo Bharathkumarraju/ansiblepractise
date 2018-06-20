@@ -1,1 +1,9 @@
-user: hostvar_db
+users:
+  hanuman1:
+     first_name: vayuputhra
+     last_name: anjaneya
+     home_dir: /home/hanuman1
+  hanuman2:
+     first_name: vayuputhra2
+     last_name: anjaneya2
+     home_dir: /home/hanuman2
