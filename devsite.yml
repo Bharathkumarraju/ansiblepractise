@@ -1,0 +1,10 @@
+--- # dev site yaml
+- name: test dev
+  hosts: localhost
+  vars_files:
+     - devsite_varibles.yml
+
+  tasks:
+  - name: test print message
+    debug:
+       msg: "test hello {{loki}}"

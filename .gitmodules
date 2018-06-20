@@ -1,0 +1,6 @@
+[submodule "k8spractise"]
+	path = k8spractise
+	url = git@github.com:Bharathkumarraju/k8spractise.git
+[submodule "howgitworks"]
+	path = howgitworks
+	url = git@github.com:Bharathkumarraju/howgitworks.git
